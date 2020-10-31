@@ -2,24 +2,15 @@
   <v-app dark>
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+        <router-link to="/">
+          <v-icon size="40">mdi-google</v-icon>
+        </router-link>
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn to="/about" text>
-        <span class="mr-2">Quem somos</span>
-      </v-btn>
-      <v-btn to="/about" text>
-        <span class="mr-2">about</span>
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-btn v-for="item in menuItems" :key="item.to" :to="item.to" text>
+        <span class="mr-2">{{ item.text }}</span>
       </v-btn>
     </v-app-bar>
 
@@ -32,31 +23,34 @@
 <script>
 export default {
   name: "App",
-  data: () => ({
-    menuItems: [
-      {
-        text: "Sobre a GlamDel",
-        to: "#xpto",
-      },
-      {
-        text: "Como funciona",
-        to: "#xpto",
-      },
-      {
-        text: "Buscar um serviço",
-        to: "#xpto",
-      },
-      {
-        text: "Faça parte",
-        to: "#xpto",
-      },
-    ],
-  }),
+  computed: {
+    menuItems() {
+      return [
+        {
+          text: "Sobre a GlamDel",
+          to: "#xpto",
+        },
+        {
+          text: "Como funciona",
+          to: "#xpto2",
+        },
+        {
+          text: "Buscar um serviço",
+          to: "#xpto3",
+        },
+        {
+          text: "Faça parte",
+          to: "#sobre",
+        },
+      ];
+    },
+  },
 };
 </script>
 
 <style>
 * {
   font-family: "Rubik", sans-serif;
+  scroll-behavior: smooth;
 }
 </style>

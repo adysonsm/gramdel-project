@@ -1,17 +1,26 @@
 <template>
   <div class="home">
-    <HelloWorld />
+    <Sobre />
+    <ComoFunciona />
+    <BuscarServico />
+    <FacaParte />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Sobre from "@/components/sections/Sobre.vue";
+import ComoFunciona from "@/components/sections/ComoFunciona.vue";
+import FacaParte from "@/components/sections/FacaParte.vue";
+import BuscarServico from "@/components/sections/BuscarServico.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    Sobre,
+    ComoFunciona,
+    FacaParte,
+    BuscarServico,
   },
 };
 </script>
