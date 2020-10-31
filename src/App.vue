@@ -15,6 +15,9 @@
       <v-spacer></v-spacer>
 
       <v-btn to="/about" text>
+        <span class="mr-2">Quem somos</span>
+      </v-btn>
+      <v-btn to="/about" text>
         <span class="mr-2">about</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
@@ -30,7 +33,24 @@
 export default {
   name: "App",
   data: () => ({
-    //
+    menuItems: [
+      {
+        text: "Sobre a GlamDel",
+        to: "#xpto",
+      },
+      {
+        text: "Como funciona",
+        to: "#xpto",
+      },
+      {
+        text: "Buscar um serviço",
+        to: "#xpto",
+      },
+      {
+        text: "Faça parte",
+        to: "#xpto",
+      },
+    ],
   }),
 };
 </script>
