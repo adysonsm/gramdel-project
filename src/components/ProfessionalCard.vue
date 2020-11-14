@@ -13,7 +13,7 @@
     <v-card-title class="text-left pb-0">{{ name }} </v-card-title>
 
     <v-card-text class="professional-description text-left">
-      <v-chip-group v-model="selection" column>
+      <v-chip-group v-model="selection" multiple>
         <v-chip v-for="(tag, i) in tags" color="primary" small :key="i">{{
           tag
         }}</v-chip>
@@ -21,7 +21,8 @@
       <v-row align="center" class="mx-0">
         <v-rating
           :value="rating"
-          color="amber"
+          color="primary"
+          background-color="#3f3f3f"
           dense
           half-increments
           readonly

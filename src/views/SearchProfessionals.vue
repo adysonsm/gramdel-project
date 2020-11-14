@@ -2,9 +2,10 @@
   <v-container>
     <Sobre />
     <h1 class="headings text-center mt-8 mb-8">Categorias</h1>
+    <v-text-field outlined v-model="filterTerm"></v-text-field>
     <v-row class="text-center">
       <v-col
-        v-for="(professional, i) in professionals"
+        v-for="(professional, i) in filteredProfessionals"
         :key="i"
         cols="12"
         sm="12"
@@ -38,10 +39,24 @@ export default {
   },
   data() {
     return {
+      filterTerm: "",
       professionals,
     };
   },
   computed: {
+    filteredProfessionals() {
+      if (this.filterTerm) {
+        let exp = new RegExp(this.filterTerm.trim(), "i");
+        return this.professionals.filter(
+          (professional) =>
+            exp.test(professional.name) ||
+            exp.test(professional.description) ||
+            exp.test(professional.tags.map((e) => e))
+        );
+      } else {
+        return this.professionals;
+      }
+    },
     cards() {
       return [
         {

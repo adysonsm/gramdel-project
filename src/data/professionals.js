@@ -9,7 +9,16 @@ const professionals = [
     image:
       "https://images.pexels.com/photos/1453003/pexels-photo-1453003.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     availabilityTime: ["Seg à Sexta", "08:00 às 20:00"],
-    tags: ["Cabelos", "Maquiagem"],
+    tags: [
+      "Cabelos",
+      "Maquiagem",
+      "Xpto",
+      "Shrubles",
+      "Cabelos",
+      "Maquiagem",
+      "Xpto",
+      "Shrubles",
+    ],
   },
   {
     name: "Elias Barbeiro",
