@@ -4,20 +4,23 @@
     <h1 class="headings text-center mt-8 mb-8">Categorias</h1>
     <v-row class="text-center">
       <v-col
+        v-for="(professional, i) in professionals"
+        :key="i"
         cols="12"
         sm="12"
         md="6"
-        lg="3"
-        v-for="(card, i) in cards"
-        :key="i"
+        lg="4"
       >
-        <v-card height="100%" color="" class="pa-4">
-          <v-icon size="50" color="primary">{{ card.icon }}</v-icon>
-
-          <v-card-text>
-            {{ card.text }}
-          </v-card-text>
-        </v-card>
+        <ProfessionalCard
+          :image="professional.image"
+          :name="professional.name"
+          :rating="professional.rating"
+          :ratingSize="professional.ratingSize"
+          :description="professional.description"
+          :whatsapp="professional.whatsapp"
+          :availabilityTime="professional.availabilityTime"
+          :tags="professional.tags"
+        />
       </v-col>
     </v-row>
   </v-container>
@@ -25,10 +28,18 @@
 
 <script>
 import Sobre from "../components/sections/Sobre";
+import ProfessionalCard from "../components/ProfessionalCard";
+import professionals from "../data/professionals";
 
 export default {
   components: {
     Sobre,
+    ProfessionalCard,
+  },
+  data() {
+    return {
+      professionals,
+    };
   },
   computed: {
     cards() {
