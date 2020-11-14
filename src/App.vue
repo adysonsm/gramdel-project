@@ -17,12 +17,44 @@
     <v-main>
       <router-view></router-view>
     </v-main>
-    <h1>AQUI VAI O COMPONENTE DO RODAPE</h1>
+    <template>
+      <v-footer >
+        <v-card class="flex" flat tile color="transparent">
+          <v-card-title >
+            <strong class="subheading"
+              >by code arte br</strong
+            >
+
+            <v-spacer></v-spacer>
+
+            <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
+              <v-icon size="24px">
+                {{ icon }}
+              </v-icon>
+            </v-btn>
+          </v-card-title>
+
+          <v-card-text class="py-2 white--text text-center">
+            {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+          </v-card-text>
+        </v-card>
+      </v-footer>
+    </template></v-app
+  >
+</template>
   </v-app>
 </template>
 
 <script>
 export default {
+      data: () => ({
+      icons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-linkedin',
+        'mdi-instagram',
+      ],
+    }),
   name: "App",
   mounted() {
     console.log(this.$router.options.routes);
