@@ -124,7 +124,7 @@ export default {
             this.loading = true;
             this.dialog = false;
             window.open(
-              `https://api.whatsapp.com/send?phone=${this.professionalNumber}=${this.customerDefaultMessage}`,
+              `https://api.whatsapp.com/send?phone=${this.professionalNumber}&text=${this.customerDefaultMessage}`,
               "_blank"
             );
           });
