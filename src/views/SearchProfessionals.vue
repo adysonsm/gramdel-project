@@ -2,7 +2,12 @@
   <v-container>
     <Sobre />
     <h1 class="headings text-center mt-8 mb-8">Categorias</h1>
-    <v-text-field outlined v-model="filterTerm"></v-text-field>
+    <v-text-field
+      outlined
+      prepend-inner-icon="mdi-magnify"
+      placeholder="O quê você procura?"
+      v-model="filterTerm"
+    ></v-text-field>
     <v-row class="text-center">
       <v-col
         v-for="(professional, i) in filteredProfessionals"
@@ -22,6 +27,12 @@
           :availabilityTime="professional.availabilityTime"
           :tags="professional.tags"
         />
+      </v-col>
+      <v-col v-if="filteredProfessionals.length === 0">
+        <v-alert>
+          <v-icon>mdi-emoticon-sad-outline</v-icon>
+          {{ `Nenhum resultado encontrado para "${filterTerm}" ` }}
+        </v-alert>
       </v-col>
     </v-row>
   </v-container>

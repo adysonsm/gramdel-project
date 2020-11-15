@@ -50,16 +50,17 @@
       </v-chip-group>
     </v-card-text>
     <v-card-actions>
-      <v-btn color="success" block @click="reserve">
-        <v-icon left>mdi-whatsapp</v-icon>
-        Whatsapp
-      </v-btn>
+      <CustomerModal />
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import CustomerModal from "./CustomerModal";
 export default {
+  components: {
+    CustomerModal,
+  },
   props: {
     image: String,
     name: String,
