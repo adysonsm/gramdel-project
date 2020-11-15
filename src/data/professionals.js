@@ -5,7 +5,7 @@ const professionals = [
     ratingSize: 12,
     description:
       "Cortes de cabelo descolados para os jovens de santarém arrasarem na orla",
-    whatsapp: "5593949394959",
+    whatsapp: "5511975198591",
     image:
       "https://images.pexels.com/photos/1453003/pexels-photo-1453003.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     availabilityTime: ["Seg à Sexta", "08:00 às 20:00"],
