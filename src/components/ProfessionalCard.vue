@@ -1,5 +1,5 @@
 <template>
-  <v-card :loading="loading" height="100%">
+  <v-card height="100%">
     <template slot="progress">
       <v-progress-linear
         color="deep-purple"
@@ -13,7 +13,7 @@
     <v-card-title class="text-left pb-0">{{ name }} </v-card-title>
 
     <v-card-text class="professional-description text-left">
-      <v-chip-group v-model="selection" multiple>
+      <v-chip-group multiple>
         <v-chip v-for="(tag, i) in tags" color="primary" small :key="i">{{
           tag
         }}</v-chip>
@@ -43,14 +43,14 @@
     <v-card-title class="text-left pb-0">Horários disponíveis</v-card-title>
 
     <v-card-text>
-      <v-chip-group v-model="selection" column>
+      <v-chip-group column>
         <v-chip v-for="(time, i) in availabilityTime" outlined small :key="i">{{
           time
         }}</v-chip>
       </v-chip-group>
     </v-card-text>
     <v-card-actions>
-      <CustomerModal />
+      <CustomerModal :dialogFor="name" :professionalNumber="whatsapp" />
     </v-card-actions>
   </v-card>
 </template>

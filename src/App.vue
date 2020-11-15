@@ -18,12 +18,10 @@
       <router-view></router-view>
     </v-main>
     <template>
-      <v-footer >
+      <v-footer>
         <v-card class="flex" flat tile color="transparent">
-          <v-card-title >
-            <strong class="subheading"
-              >by code arte br</strong
-            >
+          <v-card-title>
+            <strong class="subheading">by code arte br</strong>
 
             <v-spacer></v-spacer>
 
@@ -47,18 +45,10 @@
 
 <script>
 export default {
-      data: () => ({
-      icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-linkedin',
-        'mdi-instagram',
-      ],
-    }),
+  data: () => ({
+    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+  }),
   name: "App",
-  mounted() {
-    console.log(this.$router.options.routes);
-  },
   computed: {
     menuItems() {
       return this.$router.options.routes.map((e) => {
