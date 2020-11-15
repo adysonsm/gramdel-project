@@ -18,7 +18,7 @@
       <router-view></router-view>
     </v-main>
     <template>
-      <v-footer >
+      <v-footer>
         <v-card class="flex" flat tile color="transparent">
           <v-card-title >
             <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
@@ -41,18 +41,10 @@
 
 <script>
 export default {
-      data: () => ({
-      icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-linkedin',
-        'mdi-instagram',
-      ],
-    }),
+  data: () => ({
+    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+  }),
   name: "App",
-  mounted() {
-    console.log(this.$router.options.routes);
-  },
   computed: {
     menuItems() {
       return this.$router.options.routes.map((e) => {
