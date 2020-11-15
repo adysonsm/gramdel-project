@@ -107,6 +107,14 @@ export default {
       (v) => (v && v.length >= 16) || "Número de WhatsApp inválido",
     ],
   }),
+  watch: {
+    dialog(v) {
+      if (v && localStorage.getItem("customerData")) {
+        const customerData = JSON.parse(localStorage.getItem("customerData"));
+        this.customerData = customerData;
+      }
+    },
+  },
   methods: {
     async sendData() {
       await this.$refs.form.validate();
@@ -121,8 +129,12 @@ export default {
             console.log(e);
           })
           .finally(() => {
-            this.loading = true;
+            this.loading = false;
             this.dialog = false;
+            localStorage.setItem(
+              "customerData",
+              JSON.stringify(this.customerData)
+            );
             window.open(
               `https://api.whatsapp.com/send?phone=${this.professionalNumber}&text=${this.customerDefaultMessage}`,
               "_blank"
