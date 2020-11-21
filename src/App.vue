@@ -20,11 +20,7 @@
     <template>
       <v-footer>
         <v-card class="flex" flat tile color="transparent">
-          <v-card-title>
-            <strong class="subheading">by code arte br</strong>
-
-            <v-spacer></v-spacer>
-
+          <v-card-title >
             <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
               <v-icon size="24px">
                 {{ icon }}
