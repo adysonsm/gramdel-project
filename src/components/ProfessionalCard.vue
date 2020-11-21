@@ -1,5 +1,5 @@
 <template>
-  <v-card height="100%">
+  <v-card height="100%" outlined>
     <template slot="progress">
       <v-progress-linear
         color="deep-purple"
@@ -8,7 +8,7 @@
       ></v-progress-linear>
     </template>
 
-    <v-img height="250" :src="image"></v-img>
+    <v-img height="150" :src="image"></v-img>
 
     <v-card-title class="text-left pb-0">{{ name }} </v-card-title>
 
@@ -44,9 +44,14 @@
 
     <v-card-text>
       <v-chip-group column>
-        <v-chip v-for="(time, i) in availabilityTime" outlined small :key="i">{{
-          time
-        }}</v-chip>
+        <v-chip
+          color="primary"
+          v-for="(time, i) in availabilityTime"
+          outlined
+          small
+          :key="i"
+          >{{ time }}</v-chip
+        >
       </v-chip-group>
     </v-card-text>
     <v-card-actions>

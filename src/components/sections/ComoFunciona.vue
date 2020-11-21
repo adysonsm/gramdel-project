@@ -10,7 +10,7 @@
         v-for="(card, i) in cards"
         :key="i"
       >
-        <v-card height="100%" color="" class="pa-4">
+        <v-card height="100%" outlined class="pa-4">
           <v-icon size="50" color="primary">{{ card.icon }}</v-icon>
 
           <v-card-text>

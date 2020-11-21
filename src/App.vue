@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar fixed :color="barColor" elevation="0" dark>
       <div class="d-flex align-center">
         <router-link to="/">
           <v-icon size="40">mdi-google</v-icon>
@@ -37,11 +37,10 @@
           </v-card-text>
         </v-card>
       </v-footer>
-    </template></v-app
-  >
-</template>
+    </template>
   </v-app>
 </template>
+
 
 <script>
 export default {
@@ -49,6 +48,19 @@ export default {
     icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
   }),
   name: "App",
+  data() {
+    return {
+      barColor: "transparent",
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", (e) => {
+      const { scrollTop } = document.documentElement;
+      scrollTop > 300
+        ? (this.barColor = "primary")
+        : (this.barColor = "transparent");
+    });
+  },
   computed: {
     menuItems() {
       return this.$router.options.routes.map((e) => {
@@ -64,7 +76,7 @@ export default {
 
 <style>
 * {
-  font-family: "Rubik", sans-serif;
+  /* font-family: "Rubik", sans-serif; */
   scroll-behavior: smooth;
 }
 </style>

@@ -2,7 +2,7 @@
   <v-row justify="center">
     <v-dialog v-model="dialog" max-width="600px">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn v-bind="attrs" v-on="on" color="success" block>
+        <v-btn elevation="0" v-bind="attrs" v-on="on" color="success" block>
           <v-icon left>mdi-whatsapp</v-icon>
           Whatsapp
         </v-btn>
@@ -54,13 +54,7 @@
           <v-card-actions>
             <v-row class="pl-4 pr-4">
               <v-spacer></v-spacer>
-              <v-btn
-                block
-                color="success"
-                :disabled="!valid"
-                outlined
-                @click="sendData"
-              >
+              <v-btn block color="success" :disabled="!valid" @click="sendData">
                 <v-icon left>mdi-whatsapp</v-icon>
                 Entrar em contato
               </v-btn>
