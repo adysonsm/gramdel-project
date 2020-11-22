@@ -18,9 +18,9 @@
       <router-view></router-view>
     </v-main>
     <template>
-      <v-footer>
+      <v-footer color="primary" dark>
         <v-card class="flex" flat tile color="transparent">
-          <v-card-title >
+          <v-card-title>
             <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
               <v-icon size="24px">
                 {{ icon }}

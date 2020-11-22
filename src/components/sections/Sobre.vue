@@ -3,12 +3,13 @@
     <v-row dense align="end" class="main-row">
       <v-col class="pa-0">
         <v-img
+          class="main-img"
           max-height="450"
           max-width="350"
           src="../../assets/woman.png"
         ></v-img>
       </v-col>
-      <v-col>
+      <v-col class="pb-4">
         <v-list-item-subtitle class="mini-title">
           Bem vindo à
         </v-list-item-subtitle>
@@ -39,6 +40,9 @@ export default {
 </script>
 
 <style>
+.main-img {
+  margin: auto;
+}
 .main-row {
   color: #fafafa;
 }

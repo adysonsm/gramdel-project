@@ -7,6 +7,7 @@
     >
       <v-text-field
         filled
+        outlined
         dark
         color="white"
         prepend-inner-icon="mdi-magnify"

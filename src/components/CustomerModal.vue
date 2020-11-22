@@ -2,9 +2,8 @@
   <v-row justify="center">
     <v-dialog v-model="dialog" max-width="600px">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn elevation="0" v-bind="attrs" v-on="on" color="success" block>
-          <v-icon left>mdi-whatsapp</v-icon>
-          Whatsapp
+        <v-btn elevation="0" v-bind="attrs" v-on="on" color="primary" block>
+          Entrar em contato
         </v-btn>
       </template>
       <v-card :loading="loading">
